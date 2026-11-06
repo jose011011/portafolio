@@ -8,23 +8,24 @@
 <meta property="og:title" content="Juan José Mamani | Desarrollador web y móvil">
 <meta property="og:description" content="Páginas web, sistemas y apps hechas en La Paz. Mira mis proyectos.">
 <meta property="og:image" content="https://jose011011.github.io/img/magnus.jpg">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%2316285A'/><path d='M8 46 24 22l8 10 6-8 18 22z' fill='%23fff'/><circle cx='46' cy='16' r='5' fill='%23D7263D'/></svg>">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --night:#16285A;   /* azul noche andina */
-  --night-2:#0F1E46;
-  --snow:#F4F6FA;    /* fondo claro */
+  --night:#0E2A5C;   /* azul marino: fondo de portada y contacto */
+  --night-2:#0A2049;
+  --snow:#F2F7FC;    /* blanco con un toque de celeste */
   --paper:#FFFFFF;
-  --ink:#16213B;     /* texto */
-  --ink-2:#4D5873;   /* texto secundario */
-  --rule:#DCE1EB;
-  --red:#D7263D;     /* sistemas */
-  --yellow:#F2B21B;  /* webs */
-  --green:#1F9D5C;   /* apps */
-  --sky:#3A86C8;     /* universidad */
+  --ink:#0F2240;     /* texto */
+  --ink-2:#4A5D7A;   /* texto secundario */
+  --rule:#D6E2EF;
+  --sis:#2F6BEA;     /* azul: sistemas (Línea Azul) */
+  --web:#38B2F2;     /* celeste: páginas web (Línea Celeste) */
+  --app:#14B8A6;     /* verde agua: apps (Línea Verde) */
+  --uni:#8A9BF5;     /* azul lavanda: universidad */
+  --accent:#2EC4B6;  /* verde agua claro: botones y detalles */
   --display:'Bricolage Grotesque',Georgia,serif;
   --body:'Instrument Sans',system-ui,sans-serif;
 }
@@ -36,7 +37,7 @@ html{scroll-behavior:smooth;scroll-padding-top:24px}
 body{font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--snow);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{display:block;max-width:100%}
-:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:4px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spacing:-.02em}
 h2{font-size:clamp(34px,5vw,58px);font-variation-settings:"opsz" 96}
@@ -47,7 +48,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 .hero{background:var(--night);color:#fff;position:relative;overflow:hidden}
 .top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;position:relative;z-index:2}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600}
-.face{width:40px;height:40px;border-radius:50%;background:var(--yellow);color:var(--night);display:grid;place-items:center;font-family:var(--display);font-weight:800;overflow:hidden;flex:none}
+.face{width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--night);display:grid;place-items:center;font-family:var(--display);font-weight:800;overflow:hidden;flex:none}
 .face img{width:100%;height:100%;object-fit:cover}
 .top nav{display:flex;gap:28px;font-size:15px}
 .top nav a{text-decoration:none;opacity:.8}
@@ -56,8 +57,8 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 
 .hero-copy{position:relative;z-index:2;padding:56px 0 0}
 .status{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:#C9D3EC}
-.status i{width:9px;height:9px;border-radius:50%;background:#46D68C;box-shadow:0 0 0 0 rgba(70,214,140,.6);animation:ping 2.4s infinite}
-@keyframes ping{70%{box-shadow:0 0 0 10px rgba(70,214,140,0)}100%{box-shadow:0 0 0 0 rgba(70,214,140,0)}}
+.status i{width:9px;height:9px;border-radius:50%;background:#2EC4B6;box-shadow:0 0 0 0 rgba(46,196,182,.6);animation:ping 2.4s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(46,196,182,0)}100%{box-shadow:0 0 0 0 rgba(46,196,182,0)}}
 .hero h1{font-size:clamp(46px,8.6vw,124px);font-variation-settings:"opsz" 96;line-height:.94;letter-spacing:-.035em;margin:22px 0 26px;max-width:12ch}
 .hero h1 span{display:block;overflow:hidden}
 .hero h1 span b{display:block;font-weight:inherit;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.7,.1,1) forwards}
@@ -68,14 +69,14 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid transparent;transition:transform .2s,background .2s}
 .btn:hover{transform:translateY(-2px)}
-.btn-y{background:var(--yellow);color:var(--night)}
+.btn-y{background:var(--accent);color:var(--night)}
 .btn-o{border-color:rgba(255,255,255,.35);color:#fff}
 .btn-o:hover{background:rgba(255,255,255,.08)}
 .btn svg{width:19px;height:19px}
 
 .scene{display:block;width:100%;height:auto;margin-top:clamp(-170px,-11vw,-30px);position:relative;z-index:1}
-.scene .far{fill:#22377A}
-.scene .mid{fill:#1B2F6B}
+.scene .far{fill:#1A3F7D}
+.scene .mid{fill:#15346B}
 .scene .snowcap{fill:#E9EEF9}
 .scene .city{fill:var(--snow)}
 .scene .cable{fill:none;stroke-width:2.2}
@@ -124,7 +125,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 .go{display:flex;flex-wrap:wrap;gap:22px;margin-top:22px;font-weight:600}
 .go a{text-decoration:none;border-bottom:2px solid var(--c);padding-bottom:2px}
 .go a:hover{background:color-mix(in srgb,var(--c) 18%,transparent)}
-.client{display:inline-block;margin-left:10px;font-size:13px;font-weight:600;color:#fff;background:var(--red);padding:2px 10px;border-radius:999px;vertical-align:middle}
+.client{display:inline-block;margin-left:10px;font-size:13px;font-weight:600;color:#fff;background:var(--sis);padding:2px 10px;border-radius:999px;vertical-align:middle}
 @media(max-width:900px){.case{grid-template-columns:1fr;gap:28px}.case:nth-of-type(even) .shot{order:0}}
 @media(max-width:600px){.shot{aspect-ratio:4/3}.scene{margin-top:24px}.hero h1{margin-top:16px}}
 
@@ -135,7 +136,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 .dash aside{background:var(--night);padding:14px 12px;display:grid;gap:9px;align-content:start}
 .dash aside b{color:#fff;font-family:var(--display);font-size:15px}
 .dash aside span{height:7px;border-radius:4px;background:#2D4486}
-.dash aside span.on{background:var(--red)}
+.dash aside span.on{background:var(--sis)}
 .dash main{padding:14px;display:grid;grid-template-rows:auto 1fr;gap:10px}
 .kp{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .kp div{background:#F2F5FA;border-radius:8px;padding:8px 10px;font-size:11px;color:#4D5873}
@@ -151,8 +152,8 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 .screen{background:#fff;border-radius:19px;padding:18px 12px 22px;display:flex;flex-direction:column;gap:8px;color:#16213B;font-size:11px}
 .screen h4{font-family:var(--display);font-size:17px}
 .hb{white-space:nowrap;display:flex;align-items:center;gap:8px;border:1px solid #E3E8F0;border-radius:9px;padding:6px 8px}
-.hb s{width:14px;height:14px;border-radius:4px;border:2px solid var(--green);flex:none}
-.hb s.d{background:var(--green)}
+.hb s{width:14px;height:14px;border-radius:4px;border:2px solid var(--app);flex:none}
+.hb s.d{background:var(--app)}
 .hb em{margin-left:auto;font-style:normal;font-weight:600;color:#E0662B}
 
 /* lista de más proyectos */
@@ -181,7 +182,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 /* ========== EXPERIENCIA (línea de teleférico) ========== */
 .journey{background:var(--paper);padding:100px 0}
 .track{margin-top:56px;position:relative;padding-left:46px}
-.track:before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:4px;border-radius:2px;background:linear-gradient(var(--red),var(--yellow) 40%,var(--green) 60%,var(--sky))}
+.track:before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:4px;border-radius:2px;background:linear-gradient(var(--sis),var(--web) 40%,var(--app) 70%,var(--uni))}
 .stop{position:relative;padding-bottom:44px;max-width:720px}
 .stop:last-child{padding-bottom:0}
 .stop:before{content:"";position:absolute;left:-40px;top:4px;width:22px;height:22px;border-radius:50%;background:var(--paper);border:5px solid var(--c)}
@@ -205,7 +206,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
 
 /* ========== TECNOLOGÍAS ========== */
-.tools{padding:20px 0 100px}
+.tools{padding:20px 0 100px;overflow:hidden}
 .tool-list{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px 56px}
 .tool-list h3{font-size:19px;margin-bottom:8px}
 .tool-list p{color:var(--ink-2)}
@@ -216,12 +217,71 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 .contact{background:var(--night);color:#fff;padding:110px 0 40px;position:relative;overflow:hidden}
 .contact h2{max-width:14ch}
 .contact .intro{color:#C9D3EC}
-.mail{display:inline-block;margin-top:40px;font-family:var(--display);font-weight:600;font-size:clamp(22px,4.4vw,54px);letter-spacing:-.02em;text-decoration:none;border-bottom:4px solid var(--yellow);word-break:break-all;transition:color .2s}
-.mail:hover{color:var(--yellow)}
+.mail{display:inline-block;margin-top:40px;font-family:var(--display);font-weight:600;font-size:clamp(22px,4.4vw,54px);letter-spacing:-.02em;text-decoration:none;border-bottom:4px solid var(--accent);word-break:break-all;transition:color .2s}
+.mail:hover{color:var(--accent)}
 .contact .actions{margin-top:36px}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:100px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);font-size:14px;color:#A9B6D8}
 .stripe{height:8px;display:flex}
 .stripe i{flex:1}
+
+
+/* ===== marca y movimiento ===== */
+.logo{width:40px;height:40px;border-radius:10px;display:block;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.brand:hover .logo{transform:rotate(-8deg) translateY(-2px)}
+.ride{position:fixed;top:0;left:0;right:0;height:14px;z-index:60;pointer-events:none}
+.ride-line{position:absolute;left:0;right:0;top:3px;height:2px;background:linear-gradient(90deg,var(--sis),var(--web),var(--app),#fff);opacity:.85}
+.ride-cab{position:absolute;top:4px;left:0;width:16px;height:10px;border-radius:3px;background:var(--accent);box-shadow:0 0 0 2px var(--night);transform:translateX(calc(var(--p,0) * (100vw - 16px)))}
+.ride-cab:before{content:"";position:absolute;left:7px;top:-3px;width:2px;height:3px;background:#C9D3EC}
+
+.px{will-change:transform}
+
+/* aparición: la imagen se descubre como una cortina, el texto sube */
+.rv .shot{clip-path:inset(0 100% 0 0 round 14px);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1)}
+.rv.in .shot{clip-path:inset(0 0 0 0 round 14px)}
+.rv .shot+div>*,.rv .shot~div>*{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.1,1)}
+.rv.in .shot+div>*,.rv.in .shot~div>*{opacity:1;transform:none}
+.rv.in .shot+div>*:nth-child(2){transition-delay:.08s}.rv.in .shot+div>*:nth-child(3){transition-delay:.16s}
+.rv.in .shot+div>*:nth-child(4){transition-delay:.24s}.rv.in .shot+div>*:nth-child(5){transition-delay:.32s}
+.rv.in .shot+div>*:nth-child(n+6){transition-delay:.4s}
+.case:nth-of-type(even).rv .shot{clip-path:inset(0 0 0 100% round 14px)}
+.case:nth-of-type(even).rv.in .shot{clip-path:inset(0 0 0 0 round 14px)}
+.row.rv{opacity:0;transform:translateX(-14px);transition:opacity .6s,transform .6s}
+.row.rv.in{opacity:1;transform:none}
+.about-grid.rv>*{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.1,1)}
+.about-grid.rv.in>*{opacity:1;transform:none}
+.about-grid.rv.in>*:nth-child(2){transition-delay:.15s}
+
+/* tarjeta del proyecto se inclina hacia el mouse */
+.shot{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:clip-path 1.1s cubic-bezier(.7,0,.2,1),transform .25s}
+
+/* recorrido: la línea se llena al bajar y las estaciones se encienden */
+.track:before{background:var(--rule)!important}
+.track .fill{position:absolute;left:15px;top:8px;width:4px;border-radius:2px;height:calc(var(--f,0) * (100% - 16px));background:linear-gradient(var(--sis),var(--web) 40%,var(--app) 70%,var(--uni))}
+.stop:before{border-color:var(--rule)!important;transition:border-color .4s,transform .4s}
+.stop.lit:before{border-color:var(--c)!important;transform:scale(1.15)}
+.stop>*{transition:opacity .5s}
+.stop:not(.lit)>*{opacity:.45}
+
+/* banda de tecnologías */
+.band{margin:44px 0 0;background:var(--night);color:#fff;overflow:hidden;padding:18px 0;transform:rotate(-1.2deg)}
+.band-in{display:flex;gap:48px;width:max-content;animation:slide 32s linear infinite}
+.band span{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.6vw,44px);display:flex;align-items:center;gap:48px;white-space:nowrap}
+.band span:after{content:"";width:14px;height:14px;border-radius:4px;background:var(--web)}
+.band span:nth-child(4n+1):after{background:var(--sis)}.band span:nth-child(4n+3):after{background:var(--app)}.band span:nth-child(4n):after{background:var(--uni)}
+.band:hover .band-in{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* botones con brillo al pasar */
+.btn{position:relative;overflow:hidden}
+.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s}
+.btn:hover:after{transform:translateX(120%)}
+
+@media (prefers-reduced-motion:reduce){
+  .rv .shot,.case:nth-of-type(even).rv .shot{clip-path:none}
+  .rv .shot+div>*,.row.rv,.about-grid.rv>*{opacity:1;transform:none}
+  .stop:not(.lit)>*{opacity:1}
+  .band-in{animation:none}
+}
 
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -232,13 +292,14 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 </style>
 </head>
 <body>
+<div class="ride" aria-hidden="true"><span class="ride-line"></span><span class="ride-cab"></span></div>
 
 <!-- ================= PORTADA ================= -->
 <header class="hero" id="inicio">
   <div class="wrap">
     <div class="top">
       <a class="brand" href="#inicio">
-        <span class="face"><img src="img/foto.jpg" alt="" onerror="this.remove()">JM</span>
+        <img class="logo" src="img/logo.svg" alt="" width="40" height="40">
         Juan José Mamani
       </a>
       <nav aria-label="Secciones">
@@ -265,24 +326,24 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 
   <!-- Illimani + teleférico -->
   <svg class="scene" viewBox="0 0 1440 430" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Ilustración del nevado Illimani con el teleférico de La Paz">
-    <g class="peaks">
+    <g class="peaks"><g class="px" data-s=".12">
       <path class="far" d="M0 300 L120 250 L260 280 L420 210 L560 260 L640 190 L700 160 L760 120 L820 150 L880 105 L950 150 L1020 135 L1110 200 L1240 230 L1440 190 L1440 430 L0 430Z"/>
       <path class="snowcap" d="M700 160 L760 120 L820 150 L880 105 L950 150 L1020 135 L1060 168 L1020 160 L985 172 L950 158 L915 176 L880 140 L850 170 L820 160 L790 176 L760 150 L730 172Z"/>
-      <path class="mid" d="M0 340 L150 300 L300 330 L470 280 L620 320 L790 290 L960 320 L1140 280 L1300 310 L1440 290 L1440 430 L0 430Z"/>
+      </g><g class="px" data-s=".06"><path class="mid" d="M0 340 L150 300 L300 330 L470 280 L620 320 L790 290 L960 320 L1140 280 L1300 310 L1440 290 L1440 430 L0 430Z"/></g>
     </g>
     <!-- línea roja -->
-    <path id="lr" class="cable draw" stroke="#D7263D" d="M-20 250 Q 360 300 720 280 T 1460 330"/>
+    <path id="lr" class="cable draw" stroke="#38B2F2" d="M-20 250 Q 360 300 720 280 T 1460 330"/>
     <!-- línea amarilla -->
-    <path id="la" class="cable draw" stroke="#F2B21B" d="M-20 330 Q 400 300 760 340 T 1460 300" style="animation-delay:.8s"/>
+    <path id="la" class="cable draw" stroke="#2EC4B6" d="M-20 330 Q 400 300 760 340 T 1460 300" style="animation-delay:.8s"/>
     <g class="tower"><path data-on="lr" data-x="300"/><path data-on="lr" data-x="1010"/><path data-on="la" data-x="600"/><path data-on="la" data-x="1250"/></g>
     <g id="cabins">
-      <g><path d="M-14-26h28" stroke="#C9D3EC" stroke-width="2"/><rect x="-14" y="-24" width="28" height="22" rx="6" fill="#D7263D"/><rect x="-9" y="-19" width="18" height="8" rx="2" fill="#F4F6FA" opacity=".85"/>
+      <g><path d="M-14-26h28" stroke="#C9D3EC" stroke-width="2"/><rect x="-14" y="-24" width="28" height="22" rx="6" fill="#FFFFFF"/><rect x="-9" y="-19" width="18" height="8" rx="2" fill="#0E2A5C" opacity=".85"/>
         <animateMotion dur="26s" repeatCount="indefinite" begin="1.6s"><mpath href="#lr"/></animateMotion></g>
-      <g><path d="M-14-26h28" stroke="#C9D3EC" stroke-width="2"/><rect x="-14" y="-24" width="28" height="22" rx="6" fill="#D7263D"/><rect x="-9" y="-19" width="18" height="8" rx="2" fill="#F4F6FA" opacity=".85"/>
+      <g><path d="M-14-26h28" stroke="#C9D3EC" stroke-width="2"/><rect x="-14" y="-24" width="28" height="22" rx="6" fill="#FFFFFF"/><rect x="-9" y="-19" width="18" height="8" rx="2" fill="#0E2A5C" opacity=".85"/>
         <animateMotion dur="26s" repeatCount="indefinite" begin="-11s"><mpath href="#lr"/></animateMotion></g>
-      <g><path d="M-14-26h28" stroke="#C9D3EC" stroke-width="2"/><rect x="-14" y="-24" width="28" height="22" rx="6" fill="#F2B21B"/><rect x="-9" y="-19" width="18" height="8" rx="2" fill="#F4F6FA" opacity=".85"/>
+      <g><path d="M-14-26h28" stroke="#C9D3EC" stroke-width="2"/><rect x="-14" y="-24" width="28" height="22" rx="6" fill="#2EC4B6"/><rect x="-9" y="-19" width="18" height="8" rx="2" fill="#0E2A5C" opacity=".85"/>
         <animateMotion dur="32s" repeatCount="indefinite" begin="-4s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#la"/></animateMotion></g>
-      <g><path d="M-14-26h28" stroke="#C9D3EC" stroke-width="2"/><rect x="-14" y="-24" width="28" height="22" rx="6" fill="#F2B21B"/><rect x="-9" y="-19" width="18" height="8" rx="2" fill="#F4F6FA" opacity=".85"/>
+      <g><path d="M-14-26h28" stroke="#C9D3EC" stroke-width="2"/><rect x="-14" y="-24" width="28" height="22" rx="6" fill="#2EC4B6"/><rect x="-9" y="-19" width="18" height="8" rx="2" fill="#0E2A5C" opacity=".85"/>
         <animateMotion dur="32s" repeatCount="indefinite" begin="-20s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#la"/></animateMotion></g>
     </g>
     <!-- ciudad -->
@@ -293,11 +354,11 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 <main>
 <!-- ================= SOBRE MÍ ================= -->
 <section class="about" id="sobre-mi">
-  <div class="wrap about-grid">
+  <div class="wrap about-grid rv">
     <p class="big">Me gusta resolver problemas reales con código: que un cliente encuentre a un técnico, que un negocio venda por internet, que alguien cumpla sus hábitos.</p>
     <div class="text">
       <p>Empecé con páginas sencillas en la universidad y hoy hago <strong>sistemas completos</strong>: la base de datos, la lógica del servidor, los paneles de administración y el diseño que ve el usuario.</p>
-      <p>Mi proyecto más grande es <strong>FixGeo</strong>, una plataforma con mapas en vivo, chat y pagos por QR. También trabajo con clientes, como <strong>Magnus Despachantes de Aduana</strong>, y hago apps móviles con Flutter.</p>
+      <p>Mi proyecto más grande es <strong>FixGeo</strong>, una plataforma con mapas en vivo, chat y pagos por QR. También hice el portal de la fundación <strong>TECDEPRO</strong>, que ya está en línea, y el sitio de <strong>Magnus Despachantes de Aduana</strong>, y hago apps móviles, como una app de streaming que ya tiene usuarios activos.</p>
       <dl class="facts">
         <dt>Ubicación</dt><dd>La Paz, Bolivia. Trabajo presencial o remoto</dd>
         <dt>Estudios</dt><dd>Informática, Universidad Mayor de San Andrés</dd>
@@ -317,16 +378,37 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
         <p class="intro">Cada color es un tipo de trabajo, como las líneas del teleférico. Toca uno para filtrar.</p>
       </div>
       <div class="lines" role="group" aria-label="Filtrar proyectos">
-        <button aria-pressed="true" data-f="all"><i style="--c:conic-gradient(var(--red) 0 25%,var(--yellow) 0 50%,var(--green) 0 75%,var(--sky) 0)"></i>Todos</button>
-        <button aria-pressed="false" data-f="sistema" style="--c:var(--red)"><i></i>Sistemas</button>
-        <button aria-pressed="false" data-f="web" style="--c:var(--yellow)"><i></i>Páginas web</button>
-        <button aria-pressed="false" data-f="app" style="--c:var(--green)"><i></i>Apps</button>
-        <button aria-pressed="false" data-f="uni" style="--c:var(--sky)"><i></i>Universidad</button>
+        <button aria-pressed="true" data-f="all"><i style="--c:conic-gradient(var(--sis) 0 25%,var(--web) 0 50%,var(--app) 0 75%,var(--uni) 0)"></i>Todos</button>
+        <button aria-pressed="false" data-f="sistema" style="--c:var(--sis)"><i></i>Sistemas</button>
+        <button aria-pressed="false" data-f="web" style="--c:var(--web)"><i></i>Páginas web</button>
+        <button aria-pressed="false" data-f="app" style="--c:var(--app)"><i></i>Apps</button>
+        <button aria-pressed="false" data-f="uni" style="--c:var(--uni)"><i></i>Universidad</button>
       </div>
     </div>
 
+    <!-- TECDEPRO -->
+    <article class="case item rv" data-c="sistema web" style="--c:var(--sis)">
+      <div class="shot">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <img src="img/tecdepro.jpg" alt="Página de inicio de TECDEPRO" loading="lazy">
+      </div>
+      <div>
+        <span class="tag"><i></i>Portal web y sistema</span>
+        <h3>TECDEPRO <span class="client">Cliente</span> <span class="client" style="background:var(--app);margin-left:4px">En línea</span></h3>
+        <p>Portal y sistema de la Fundación Tecnológico de Desarrollo Productivo, en La Paz. Las personas encuentran cursos de capacitación técnica y piden información, y el personal publica los cursos desde el sistema.</p>
+        <ul>
+          <li>Catálogo de cursos con buscador y filtros por área y modalidad</li>
+          <li>Ficha de cada curso con duración, modalidad y cupos disponibles</li>
+          <li>Sistema interno con acceso por usuario y contraseña</li>
+          <li>Se instala en el celular como una app y está preparado para Google</li>
+        </ul>
+        <p class="stack"><b>Hecho con</b> PHP y MySQL con arquitectura MVC, Bootstrap 5 y JavaScript</p>
+        <div class="go"><a href="https://tecdepro.org" target="_blank" rel="noopener">Ver el sitio</a><a href="https://github.com/jose011011/tecdepro" target="_blank" rel="noopener">Ver la presentación</a></div>
+      </div>
+    </article>
+
     <!-- FixGeo -->
-    <article class="case item" data-c="sistema" style="--c:var(--red)">
+    <article class="case item rv" data-c="sistema" style="--c:var(--sis)">
       <div class="shot">
         <div class="chrome"><i></i><i></i><i></i></div>
         <div class="mock fix" aria-hidden="true">
@@ -334,7 +416,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
             <aside><b>FixGeo</b><span class="on"></span><span></span><span style="width:80%"></span><span style="width:60%"></span><span style="width:75%"></span></aside>
             <main>
               <div class="kp"><div><b>128</b>solicitudes</div><div><b>42</b>técnicos</div><div><b>4,8</b>calificación</div></div>
-              <div class="map"><svg viewBox="0 0 100 60" preserveAspectRatio="none"><path d="M18 46 C 35 40, 45 20, 70 16" stroke="#16285A" stroke-width="1.2" stroke-dasharray="3 2" fill="none" vector-effect="non-scaling-stroke"/><circle cx="18" cy="46" r="3.2" fill="#3A86C8"/><circle cx="70" cy="16" r="3.2" fill="#D7263D"/></svg></div>
+              <div class="map"><svg viewBox="0 0 100 60" preserveAspectRatio="none"><path d="M18 46 C 35 40, 45 20, 70 16" stroke="#16285A" stroke-width="1.2" stroke-dasharray="3 2" fill="none" vector-effect="non-scaling-stroke"/><circle cx="18" cy="46" r="3.2" fill="#3A86C8"/><circle cx="70" cy="16" r="3.2" fill="#2F6BEA"/></svg></div>
             </main>
           </div>
         </div>
@@ -356,7 +438,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
     </article>
 
     <!-- Magnus -->
-    <article class="case item" data-c="web" style="--c:var(--yellow)">
+    <article class="case item rv" data-c="web" style="--c:var(--web)">
       <div class="shot">
         <div class="chrome"><i></i><i></i><i></i></div>
         <img src="img/magnus.jpg" alt="Página de inicio de Magnus Despachantes de Aduana" loading="lazy">
@@ -375,8 +457,29 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
       </div>
     </article>
 
+    <!-- App de streaming -->
+    <article class="case item rv" data-c="app" style="--c:var(--app)">
+      <div class="shot">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <img src="img/streaming.jpg" alt="Pantallas de la app de streaming: buscador, inicio y plan VIP" loading="lazy">
+      </div>
+      <div>
+        <span class="tag"><i></i>App móvil</span>
+        <h3>App de streaming <span class="client" style="background:var(--app)">Con usuarios activos</span></h3>
+        <p>App de películas y series que ya usan muchas personas. Reúne el catálogo, las cuentas, los pagos y el soporte, y recomienda qué ver con inteligencia artificial.</p>
+        <ul>
+          <li>Recomendaciones con IA y "Continuar viendo" con el progreso de cada episodio</li>
+          <li>Buscador con filtros por tipo y género, mi lista y descargas</li>
+          <li>Planes VIP con pago por QR y activación con códigos de un solo uso</li>
+          <li>Varios perfiles por cuenta, referidos y chat de soporte</li>
+        </ul>
+        <p class="stack"><b>Hecho con</b> Firebase y Cloud Firestore para Android</p>
+        <div class="go"><a href="https://github.com/jose011011/app-streaming" target="_blank" rel="noopener">Ver la presentación</a></div>
+      </div>
+    </article>
+
     <!-- HabitGo -->
-    <article class="case item" data-c="app" style="--c:var(--green)">
+    <article class="case item rv" data-c="app" style="--c:var(--app)">
       <div class="shot">
         <div class="chrome"><i></i><i></i><i></i></div>
         <div class="mock habit" aria-hidden="true">
@@ -405,7 +508,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
     </article>
 
     <!-- Delicias -->
-    <article class="case item" data-c="web" style="--c:var(--yellow)">
+    <article class="case item rv" data-c="web" style="--c:var(--web)">
       <div class="shot">
         <div class="chrome"><i></i><i></i><i></i></div>
         <img src="img/delicias.jpg" alt="Página de inicio de Delicias en Línea" loading="lazy">
@@ -428,43 +531,43 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
     <div class="more">
       <h3>Otros proyectos</h3>
       <div class="list">
-        <div class="row item" data-c="web uni" data-img="img/pacium.jpg" style="--c:var(--sky)">
+        <div class="row item rv" data-c="web uni" data-img="img/pacium.jpg" style="--c:var(--uni)">
           <i class="dot"></i><img class="thumb" src="img/pacium.jpg" alt="" loading="lazy">
           <span class="name">PACIUM, UMSA</span>
           <span class="desc">Sitio del Parque Científico de la Facultad de Tecnología: cursos, maestría e investigación.</span>
           <span class="links"><a href="https://jose011011.github.io/PACIUM/" target="_blank" rel="noopener">Sitio</a><a href="https://github.com/jose011011/PACIUM" target="_blank" rel="noopener">Código</a></span>
         </div>
-        <div class="row item" data-c="web" data-img="img/dioptik.jpg" style="--c:var(--yellow)">
+        <div class="row item rv" data-c="web" data-img="img/dioptik.jpg" style="--c:var(--web)">
           <i class="dot"></i><img class="thumb" src="img/dioptik.jpg" alt="" loading="lazy">
           <span class="name">Dioptik Store</span>
           <span class="desc">Tienda de lentes y monturas con catálogo y filtros por tipo, precio y marca.</span>
           <span class="links"><a href="https://jose011011.github.io/pagina-de-lentes/" target="_blank" rel="noopener">Sitio</a><a href="https://github.com/jose011011/pagina-de-lentes" target="_blank" rel="noopener">Código</a></span>
         </div>
-        <div class="row item" data-c="web" data-img="img/semana-santa.jpg" style="--c:var(--yellow)">
+        <div class="row item rv" data-c="web" data-img="img/semana-santa.jpg" style="--c:var(--web)">
           <i class="dot"></i><img class="thumb" src="img/semana-santa.jpg" alt="" loading="lazy">
           <span class="name">Semana Santa en Bolivia</span>
           <span class="desc">Sitio sobre tradiciones, recetas y turismo, con galería de fotos.</span>
           <span class="links"><a href="https://jose011011.github.io/semana_santa/" target="_blank" rel="noopener">Sitio</a><a href="https://github.com/jose011011/semana_santa" target="_blank" rel="noopener">Código</a></span>
         </div>
-        <div class="row item" data-c="web" data-img="img/peliculas.jpg" style="--c:var(--yellow)">
+        <div class="row item rv" data-c="web" data-img="img/peliculas.jpg" style="--c:var(--web)">
           <i class="dot"></i><img class="thumb" src="img/peliculas.jpg" alt="" loading="lazy">
           <span class="name">Películas Online</span>
           <span class="desc">Catálogo de películas con carrusel de estrenos y registro de usuarios.</span>
           <span class="links"><a href="https://jose011011.github.io/peliculas/" target="_blank" rel="noopener">Sitio</a><a href="https://github.com/jose011011/peliculas" target="_blank" rel="noopener">Código</a></span>
         </div>
-        <div class="row item" data-c="web uni" data-img="img/nanotecnologia.jpg" style="--c:var(--sky)">
+        <div class="row item rv" data-c="web uni" data-img="img/nanotecnologia.jpg" style="--c:var(--uni)">
           <i class="dot"></i><img class="thumb" src="img/nanotecnologia.jpg" alt="" loading="lazy">
           <span class="name">Nanotecnología</span>
           <span class="desc">Sitio de noticias sobre nanorobots en la medicina, con video y artículos.</span>
           <span class="links"><a href="https://jose011011.github.io/nanotecnologia_2.0/" target="_blank" rel="noopener">Sitio</a><a href="https://github.com/jose011011/nanotecnologia_2.0" target="_blank" rel="noopener">Código</a></span>
         </div>
-        <div class="row item" data-c="web" style="--c:var(--yellow)">
+        <div class="row item rv" data-c="web" style="--c:var(--web)">
           <i class="dot"></i>
           <span class="name">Ficha sobre Innovación</span>
           <span class="desc">Diseño de Figma convertido en una interfaz con React y TypeScript.</span>
           <span class="links"><a href="https://github.com/jose011011/fichero" target="_blank" rel="noopener">Código</a></span>
         </div>
-        <div class="row item" data-c="sistema" style="--c:var(--red)">
+        <div class="row item rv" data-c="sistema" style="--c:var(--sis)">
           <i class="dot"></i>
           <span class="name">GEO, primera versión</span>
           <span class="desc">Marketplace de servicios con roles, solicitudes, calificaciones y chat. Después creció y se convirtió en FixGeo.</span>
@@ -481,32 +584,44 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
   <div class="wrap">
     <h2>Mi recorrido</h2>
     <p class="intro">Del proyecto más reciente al primero.</p>
-    <div class="track">
-      <div class="stop" style="--c:var(--red)">
+    <div class="track"><span class="fill" aria-hidden="true"></span>
+      <div class="stop" style="--c:var(--sis)">
+        <div class="year">2026</div>
+        <h3>Desarrollador web freelance para TECDEPRO</h3>
+        <div class="where">Fundación Tecnológico de Desarrollo Productivo, cliente</div>
+        <p>Hice su portal de cursos y el sistema interno con el que publican sus capacitaciones, con PHP, MySQL y arquitectura MVC. Está en línea en tecdepro.org.</p>
+      </div>
+      <div class="stop" style="--c:var(--sis)">
         <div class="year">2026</div>
         <h3>Desarrollador full-stack en FixGeo</h3>
         <div class="where">Proyecto propio</div>
         <p>Diseñé y programé toda la plataforma: la base de datos de 15 tablas, los tres paneles, la API para la app móvil, el seguimiento GPS y los pagos por QR.</p>
       </div>
-      <div class="stop" style="--c:var(--yellow)">
+      <div class="stop" style="--c:var(--web)">
         <div class="year">2026</div>
         <h3>Desarrollador web freelance para Magnus</h3>
         <div class="where">Magnus Despachantes de Aduana, cliente</div>
         <p>Hice su sitio web corporativo de principio a fin, desde entender su negocio hasta dejarlo listo para aparecer en Google.</p>
       </div>
-      <div class="stop" style="--c:var(--green)">
+      <div class="stop" style="--c:var(--app)">
+        <div class="year">2026</div>
+        <h3>Desarrollador móvil de una app de streaming</h3>
+        <div class="where">Proyecto propio, con usuarios activos</div>
+        <p>Creé una app de películas y series con Firebase, recomendaciones con IA, planes VIP con pagos por QR y chat de soporte.</p>
+      </div>
+      <div class="stop" style="--c:var(--app)">
         <div class="year">2026</div>
         <h3>Desarrollador móvil en HabitGo</h3>
         <div class="where">Proyecto propio</div>
         <p>Creé una app de hábitos en Flutter para Android e iOS, que funciona sin conexión.</p>
       </div>
-      <div class="stop" style="--c:var(--sky)">
+      <div class="stop" style="--c:var(--uni)">
         <div class="year">2025</div>
         <h3>Desarrollador web en PACIUM</h3>
         <div class="where">Parque Científico, Facultad de Tecnología de la UMSA</div>
         <p>Hice el sitio con el catálogo de cursos, la maestría, el doctorado y las líneas de investigación.</p>
       </div>
-      <div class="stop" style="--c:var(--sky)">
+      <div class="stop" style="--c:var(--uni)">
         <div class="year">2024 y 2025</div>
         <h3>Primeros proyectos y trabajos en equipo</h3>
         <div class="where">Universidad Mayor de San Andrés</div>
@@ -522,10 +637,10 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
     <h2>¿Qué necesitas?</h2>
     <p class="intro">Esto es lo que puedo hacer por tu negocio o tu idea.</p>
     <div class="svc">
-      <div style="--c:var(--yellow)"><h3>Una página web</h3><p>Para que tu negocio aparezca en internet, se vea bien en el celular y te escriban por WhatsApp.</p></div>
-      <div style="--c:var(--red)"><h3>Un sistema a medida</h3><p>Para controlar clientes, pedidos o inventario, con usuarios, permisos y reportes.</p></div>
-      <div style="--c:var(--green)"><h3>Una app móvil</h3><p>Para Android e iOS, conectada a tu sistema o funcionando sin internet.</p></div>
-      <div style="--c:var(--sky)"><h3>Tu diseño hecho realidad</h3><p>Si ya tienes un diseño en Figma, lo convierto en una página que funciona.</p></div>
+      <div style="--c:var(--web)"><h3>Una página web</h3><p>Para que tu negocio aparezca en internet, se vea bien en el celular y te escriban por WhatsApp.</p></div>
+      <div style="--c:var(--sis)"><h3>Un sistema a medida</h3><p>Para controlar clientes, pedidos o inventario, con usuarios, permisos y reportes.</p></div>
+      <div style="--c:var(--app)"><h3>Una app móvil</h3><p>Para Android e iOS, conectada a tu sistema o funcionando sin internet.</p></div>
+      <div style="--c:var(--uni)"><h3>Tu diseño hecho realidad</h3><p>Si ya tienes un diseño en Figma, lo convierto en una página que funciona.</p></div>
     </div>
     <ol class="steps">
       <li><b>Conversamos</b><span>Me cuentas qué necesitas y qué quieres lograr.</span></li>
@@ -540,11 +655,17 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 <section class="tools" id="tecnologias">
   <div class="wrap">
     <h2>Con qué trabajo</h2>
+  </div>
+  <div class="band" aria-hidden="true"><div class="band-in">
+    <span>PHP</span><span>MySQL</span><span>Flutter</span><span>React</span><span>JavaScript</span><span>Firebase</span><span>Tailwind</span><span>Bootstrap</span><span>Dart</span><span>Figma</span><span>Git</span>
+    <span>PHP</span><span>MySQL</span><span>Flutter</span><span>React</span><span>JavaScript</span><span>Firebase</span><span>Tailwind</span><span>Bootstrap</span><span>Dart</span><span>Figma</span><span>Git</span>
+  </div></div>
+  <div class="wrap">
     <div class="tool-list">
       <div><h3>Servidor</h3><p>PHP 8, arquitectura MVC, APIs REST, JWT</p></div>
       <div><h3>Diseño y pantallas</h3><p>HTML, CSS, JavaScript, React, Tailwind, Bootstrap</p></div>
       <div><h3>Apps móviles</h3><p>Flutter y Dart</p></div>
-      <div><h3>Bases de datos</h3><p>MySQL, SQL, modelado de datos</p></div>
+      <div><h3>Bases de datos</h3><p>MySQL, Firebase Firestore, modelado de datos</p></div>
       <div><h3>Otros lenguajes</h3><p>Java, Python, TypeScript</p></div>
       <div><h3>Herramientas</h3><p>Git, GitHub, Figma, XAMPP, VS Code, Vite</p></div>
     </div>
@@ -565,7 +686,7 @@ h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
     <div class="foot"><span>© 2026 Juan José Mamani Machaca</span><span>Hecho a mano en La Paz, Bolivia</span></div>
   </div>
 </footer>
-<div class="stripe" aria-hidden="true"><i style="background:var(--red)"></i><i style="background:var(--yellow)"></i><i style="background:var(--green)"></i><i style="background:var(--sky)"></i></div>
+<div class="stripe" aria-hidden="true"><i style="background:var(--sis)"></i><i style="background:var(--web)"></i><i style="background:var(--app)"></i><i style="background:#fff"></i></div>
 
 <script>
 // Filtros por "línea"
@@ -583,6 +704,31 @@ if(matchMedia('(hover:hover) and (pointer:fine)').matches){
     r.addEventListener('mouseenter',()=>{pimg.src=r.dataset.img;peek.classList.add('on')});
     r.addEventListener('mouseleave',()=>peek.classList.remove('on'));
     r.addEventListener('mousemove',e=>{peek.style.left=(e.clientX+24)+'px';peek.style.top=(e.clientY-100)+'px';});
+  });
+}
+
+
+// ===== movimiento =====
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>reduce?el.classList.add('in'):io.observe(el));
+
+const ride=document.querySelector('.ride'),px=[...document.querySelectorAll('.px')],track=document.querySelector('.track'),stops=[...document.querySelectorAll('.stop')];
+function onScroll(){
+  const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;
+  ride.style.setProperty('--p',max>0?y/max:0);
+  if(!reduce&&y<innerHeight*1.2)px.forEach(g=>g.style.transform=`translateY(${y*g.dataset.s}px)`);
+  const r=track.getBoundingClientRect(),mid=innerHeight*.6;
+  track.style.setProperty('--f',Math.min(1,Math.max(0,(mid-r.top)/r.height)));
+  stops.forEach(s=>s.classList.toggle('lit',s.getBoundingClientRect().top<mid));
+}
+addEventListener('scroll',()=>requestAnimationFrame(onScroll),{passive:true});onScroll();
+
+// inclinación de las capturas
+if(!reduce&&matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.case .shot').forEach(sh=>{
+    sh.addEventListener('mousemove',e=>{const r=sh.getBoundingClientRect();sh.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*6+'deg');sh.style.setProperty('--rx',-((e.clientY-r.top)/r.height-.5)*6+'deg');});
+    sh.addEventListener('mouseleave',()=>{sh.style.setProperty('--rx','0deg');sh.style.setProperty('--ry','0deg');});
   });
 }
 

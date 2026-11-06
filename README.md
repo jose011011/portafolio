@@ -3,8 +3,8 @@
 
 <p align="center">
   <a href="https://jose011011.github.io"><img src="https://img.shields.io/badge/Mi_portafolio-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portafolio"></a>
-  <a href="mailto:TU_CORREO@gmail.com"><img src="https://img.shields.io/badge/Correo-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Correo"></a>
-  <a href="https://wa.me/591TU_NUMERO"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"></a>
+  <a href="mailto:juanmamani121432@gmail.com"><img src="https://img.shields.io/badge/Correo-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Correo"></a>
+  <a href="https://wa.me/59164240837"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"></a>
 </p>
 
 ---
@@ -16,7 +16,6 @@
 - 📱 Creo **apps móviles** con Flutter
 - 🎨 Paso diseños de **Figma** a código (HTML o React)
 - 🎓 Estudio **Informática en la Universidad Mayor de San Andrés (UMSA)**
-- 👨‍🏫 Fui **auxiliar de Programación II** en 2025 (Java y Python)
 - 📫 Disponible para **trabajos, freelance y prácticas**
 
 ### 💼 Experiencia
@@ -26,7 +25,6 @@
 | 2026 | Desarrollador full-stack | **FixGeo**: plataforma de servicios técnicos con GPS, chat, pagos QR y API REST |
 | 2026 | Desarrollador web freelance | **Magnus Despachantes de Aduana**: sitio web corporativo para el cliente |
 | 2026 | Desarrollador móvil | **HabitGo**: app de hábitos en Flutter |
-| 2025 | Auxiliar de docencia | **Programación II**, UMSA |
 | 2025 | Desarrollador web | **PACIUM**: sitio del Parque Científico de la Facultad de Tecnología, UMSA |
 
 ### ⭐ Proyectos destacados
